@@ -1,0 +1,1 @@
+set auto_path [linsert $auto_path 0 .]
