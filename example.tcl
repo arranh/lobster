@@ -10,7 +10,13 @@ set timeout 30
 package require lobster
 
 # Logs in to remote host
-set huclSSH [lob::login 192.168.1.78 arranholloway k21267]
+set huclSSH [lob::login 192.168.1.75 arranholloway k21267]
+
+# Check that the login has worked
+if {$huclSSH == False} {
+	set huclSSH [lob::login 192.168.1.78 arranholloway k21267]
+}
+
 
 # Changes directory on remote host
 lob::go $huclSSH /Users/arranholloway/GitHub/lobster

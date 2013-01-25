@@ -20,8 +20,8 @@ proc lob::login {hostname username password} {
 	spawn ssh "$username@$hostname"
 	set host_id $spawn_id
 	expect {
-	  timeout { send_user "\Unable to connect to $hostname.\n"; exit 1 }
-	  eof { send_user "\nSSH connection failed for $hostname\n"; exit 1 }
+	  timeout { send_user "\Unable to connect to $hostname.\n"; return False; exit 1 }
+	  eof { send_user "\nSSH connection failed for $hostname\n"; return False; exit 1 }
 	  "*assword"
 	}
 
