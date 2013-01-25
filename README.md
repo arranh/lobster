@@ -15,16 +15,19 @@ To use lobster you should make sure the following are installed:
 	tecup install Expect
 3. Download and install openSSH for windows from http://sshwindows.sourceforge.net/download/
 
-Commands
---------
+## Commands
 
-- lob:begin - begins a session with the remote device
-- lob::done - closes the connection to the remote device.
+### Implemented
+- lob:login - begins a session with the remote device
+- lob::leave - closes the connection to the remote device.
 - lob:go - goes to a location on the remote device
-- lob::reboot - reboots the device
-- lob::shutdown - shuts the device down
 - lob::put - put a file onto remote host.
 - lob::get - get a file from the remote host.
+
+### To do
+- lob::reboot - reboots the device
+- lob::shutdown - shuts the device down
+
 
 Tips
 ----
