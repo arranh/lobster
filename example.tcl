@@ -4,26 +4,23 @@ exec tclsh "$0" ${1+"$@"}
 
 set auto_path [linsert $auto_path 0 /Users/arranholloway/GitHub/lobster] 
 
-set timeout 10
+set timeout 30
 
 # Requires the lobster package
-package require Expect
 package require lobster
 
-#exp_internal 1
-
 # Logs in to remote host
-lob::login 192.168.1.78 arranholloway k21267
+set huclSSH [lob::login 192.168.1.78 arranholloway k21267]
 
 # Changes directory on remote host
-lob::go /Users/arranholloway/GitHub/lobster	
+lob::go $huclSSH /Users/arranholloway/GitHub/lobster
 
 # Run any command. Note: there is minimal error checking.
-lob::run ls
-lob::run q
+lob::run $huclSSH ls "*\$ " 
 
-# Logs out of remote host
-lob::leave
+lob::put 192.168.1.78 arranholloway k21267 README.md /Users/arranholloway/GitHub/lobster/test89.txt
 
-
+# Logs out of remote host. You should make sure you do this for
+# each connection created.
+lob::leave $huclSSH
 
