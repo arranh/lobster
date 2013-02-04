@@ -33,7 +33,7 @@ Logs into a remote device over SSH. Takes the device object created by the lob::
 ### lob::leave 
 Closes the connection to the remote device. Takes the connection handle you wish to close.
 
-	lob::leave $huclSSH
+	lob::leave $yoursSSH
 	
 
 ### lob::go
@@ -55,7 +55,7 @@ Puts a file onto remote host using scp. The following command coppies the file R
 ### lob::get
 Gets a file from the remote host. For example the following file gets the file test.txt from the remote device and copies it to the current folder as gotit.txt
 
-	lob::get $dev_hucl /Users/username/GitHub/lobster/test89.txt gotit.txt
+	lob::get $dev_yours /Users/username/GitHub/lobster/test89.txt gotit.txt
 	
 
 Tips
